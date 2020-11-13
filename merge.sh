@@ -31,4 +31,6 @@ push_uri="https://$GIT_SECRET_TOKEN@${GIT_SERVER}/$GIT_REPO"
 
 # Redirect to /dev/null to avoid secret leakage
 git push "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
-git push "$push_uri" :"${TRAVIS_BRANCH:-$CI_COMMIT_REF_NAME}" >/dev/null 2>&1
+
+# delete current branch
+# git push "$push_uri" :"${TRAVIS_BRANCH:-$CI_COMMIT_REF_NAME}" >/dev/null 2>&1
