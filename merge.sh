@@ -24,7 +24,7 @@ git merge --ff-only "${TRAVIS_COMMIT}"
 
 printf 'Pushing to %s\n' "${TRAVIS_REPO_SLUG}" >&2
 
-push_uri="https://$GIT_SECRET_TOKEN@${GIT_SERVER}/${TRAVIS_REPO_SLUG}"
+push_uri="https://$GIT_SECRET_TOKEN@https://github.com/${TRAVIS_REPO_SLUG}"
 
 # Redirect to /dev/null to avoid secret leakage
 git push "$push_uri" "${BRANCH_TO_MERGE_INTO}" >/dev/null 2>&1
